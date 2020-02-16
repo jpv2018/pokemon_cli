@@ -22,6 +22,14 @@ class CLI
   
   def select_pokemon
     puts "Please enter the ID (Pokedex) number of the pokemon that you would like to know more about."
+    user_response = gets.strip
+    if user_response.to_i > 0 && user_response <= Pokemon.all.size
+      about_pokemon
+    else
+      puts "That pokemon ID did not match an existing pokemon in our database."
+      puts "Please try again"
+      select_pokemon
+    end
   end
   
   def about_pokemon
