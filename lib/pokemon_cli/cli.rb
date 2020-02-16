@@ -2,6 +2,7 @@ class CLI
   
   def start
     puts "Let's find a Pokemon to learn about!"
+    API.new.find_pokemon
     run
   end
   
