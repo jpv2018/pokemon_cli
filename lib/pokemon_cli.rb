@@ -1,7 +1,7 @@
-require_relative "api.rb"
-require_relative "cli.rb"
-require_relative "pokemon.rb"
-require_relative "version.rb"
+require_relative "pokemon_cli/api.rb"
+require_relative "pokemon_cli/cli.rb"
+require_relative "pokemon_cli/pokemon.rb"
+require_relative "pokemon_cli/version.rb"
 
 require 'pry'
 require 'httparty'

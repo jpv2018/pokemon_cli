@@ -1,7 +1,7 @@
 class API
 
   def find_pokemon
-    url = "https://pokeapi.co/"
+    url = "https://pokeapi.co/api/v2"
     response = HTTParty.get(url)
     response.parsed_response.each do |pokemon|
       name = pokemon["name"]
