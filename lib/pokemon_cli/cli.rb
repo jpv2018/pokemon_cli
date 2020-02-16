@@ -1,6 +1,7 @@
 class CLI
-  
+  attr_accessor
   def start
+    API.new
     puts "Let's find a Pokemon to learn about!"
     run
   end
@@ -22,7 +23,7 @@ class CLI
   def select_pokemon
     puts "Please enter the name of the pokemon that you would like to know more about."
     user_response = gets.strip
-    if find_pokemon(user_response).exists?
+    if API.find_pokemon(user_response)
       about_pokemon
     else
       puts "That name did not match an existing pokemon in our database."
@@ -32,7 +33,7 @@ class CLI
   end
   
   def about_pokemon
-    puts "pokemon_id. pokemon_name"
+    puts "pokemon_id. #{self.name}"
     puts "height = pokemon_height inches"
     puts "weight = pokemon_weight lbs"
     puts "types = pokemon_types"

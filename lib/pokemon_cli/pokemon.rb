@@ -3,12 +3,8 @@ class Pokemon
   
   attr_accessor :name, :id, :height, :weight, :types
   
-  def initialize(name, id, height, weight, types)
+  def initialize(name)
     @name = name
-    @id = id
-    @height = height
-    @weight = weight
-    @types = types
     save
   end
   

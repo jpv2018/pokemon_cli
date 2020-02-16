@@ -3,14 +3,13 @@ require 'pry'
   def find_pokemon(name)
     url = "https://pokeapi.co/api/v2/"
     response = HTTParty.get(url + "pokemon/#{name}")
-    response.parsed_response["results"].each do |pokemon|
-      name = pokemon["species"]
+    response.parsed_response do |pokemon|
+      name = pokemon["name"]
       #id = pokemon["id"]
      # height = pokemon["height"]
       #weight = pokemon["weight"]
       #type = pokemon["types"]
-    binding.pry
-      Pokemon.new(name, id, height, weight, types)
+      Pokemon.new(name)
     end
   end
 end
