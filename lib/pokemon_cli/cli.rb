@@ -20,12 +20,11 @@ class CLI
     end
   end
   
-  def pokemon_names
-    puts "pokemon_id. pokemon_name"
-    select_pokemon
+  def select_pokemon
+    puts "Please enter the ID (Pokedex) number of the pokemon that you would like to know more about."
   end
   
-  def select_pokemon
+  def about_pokemon
     puts "pokemon_id. pokemon_name"
     puts "height = pokemon_height inches"
     puts "weight = pokemon_weight lbs"
