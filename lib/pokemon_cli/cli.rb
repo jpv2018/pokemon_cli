@@ -8,7 +8,15 @@ class CLI
   def run
     puts "Would you like to continue?"
     puts "Please type 'yes' or 'no'"
-    pokemon_names
+    user_response = gets.strip
+    if user_response.downcase == 'yes' 
+      pokemon_names
+    elsif user_response.downcase == 'no' 
+    quit
+    else 
+      "Please type 'yes' or 'no'" 
+      run
+    end
   end
   
   def pokemon_names
