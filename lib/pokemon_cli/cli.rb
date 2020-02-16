@@ -7,6 +7,7 @@ class CLI
   
   def run
     puts "Would you like to continue?"
+    puts "Please type 'yes' or 'no'"
     pokemon_names
   end
   
@@ -20,6 +21,11 @@ class CLI
     puts "height = pokemon_height inches"
     puts "weight = pokemon_weight lbs"
     puts "types = pokemon_types"
+    run
+  end
+  
+  def quit
+    puts "See you next time!"
   end
   
 end
