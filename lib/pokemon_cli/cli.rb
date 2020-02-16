@@ -2,7 +2,6 @@ class CLI
   
   def start
     puts "Let's find a Pokemon to learn about!"
-    API.new.find_pokemon
     run
   end
   
@@ -11,7 +10,7 @@ class CLI
     puts "Please type 'yes' or 'no'"
     user_response = gets.strip
     if user_response.downcase == 'yes' 
-      pokemon_names
+      select_pokemon
     elsif user_response.downcase == 'no' 
     quit
     else 
@@ -21,12 +20,12 @@ class CLI
   end
   
   def select_pokemon
-    puts "Please enter the ID (Pokedex) number of the pokemon that you would like to know more about."
+    puts "Please enter the name of the pokemon that you would like to know more about."
     user_response = gets.strip
-    if user_response.to_i > 0 && user_response <= Pokemon.all.size
+    if find_pokemon(user_response).exists?
       about_pokemon
     else
-      puts "That pokemon ID did not match an existing pokemon in our database."
+      puts "That name did not match an existing pokemon in our database."
       puts "Please try again"
       select_pokemon
     end

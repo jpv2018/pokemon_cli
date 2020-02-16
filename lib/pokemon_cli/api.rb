@@ -1,8 +1,8 @@
 class API
 require 'pry'
   def find_pokemon(name)
-    url = "https://pokeapi.co/api/v2/pokemon/#{name}"
-    response = HTTParty.get(url)
+    url = "https://pokeapi.co/api/v2/"
+    response = HTTParty.get(url + "pokemon/#{name}")
     response.parsed_response["results"].each do |pokemon|
       name = pokemon["species"]
       #id = pokemon["id"]
