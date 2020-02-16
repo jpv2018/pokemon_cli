@@ -1,7 +1,7 @@
 class CLI
   attr_accessor
   def start
-    API.new
+    API.new.find_pokemon(nil)
     puts "Let's find a Pokemon to learn about!"
     run
   end
