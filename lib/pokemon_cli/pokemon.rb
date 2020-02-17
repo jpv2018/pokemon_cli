@@ -12,4 +12,14 @@ class Pokemon
     @@all << self
   end
   
+  def self.all
+    @@all
+  end
+  
+  def self.find_by_name(name)
+    @@all.detect do |pokemon|
+      pokemon.name == name
+    end
+  end
+  
 end
