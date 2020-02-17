@@ -44,9 +44,9 @@ class CLI
       puts "That name did not match an existing Pokemon"
       select_pokemon
     end
-    puts "height = #{new_pokemon.height} inches"
-    puts "weight = #{new_pokemon.weight} lbs" 
-    run
+    puts "height = #{new_pokemon.height} inches" unless new_pokemon.height == nil
+    puts "weight = #{new_pokemon.weight} lbs" unless new_pokemon.weight == nil
+    run unless new_pokemon.id == nil
   end
   
   def quit
