@@ -6,7 +6,6 @@ class CLI
       self.new_pokemon = Pokemon.find_by_name(name)
     else
       API.new.find_pokemon(name)
-      if 
     end
       
   end
@@ -35,18 +34,18 @@ class CLI
     user_response = gets.strip
     if find_pokemon(user_response)
       about_pokemon
-    else
-      puts "That name did not match an existing pokemon in our database."
-      puts "Please try again"
-      select_pokemon
     end
   end
   
   def about_pokemon
     new_pokemon = Pokemon.all.last
-    puts "#{new_pokemon.id}. #{new_pokemon.name}"
+    puts "#{new_pokemon.id}. #{new_pokemon.name}" unless new_pokemon.id == nil
+    if new_pokemon.id == nil
+      puts "That name did not match an existing Pokemon"
+      select_pokemon
+    end
     puts "height = #{new_pokemon.height} inches"
-    puts "weight = #{new_pokemon.weight} lbs"
+    puts "weight = #{new_pokemon.weight} lbs" 
     run
   end
   
