@@ -6,6 +6,7 @@ class CLI
       self.new_pokemon = Pokemon.find_by_name(name)
     else
       API.new.find_pokemon(name)
+      if 
     end
       
   end
@@ -43,11 +44,9 @@ class CLI
   
   def about_pokemon
     new_pokemon = Pokemon.all.last
-    puts "pokemon_id. #{new_pokemon.name}"
-    puts "height = pokemon_height inches"
-    binding.pry
-    puts "weight = pokemon_weight lbs"
-    puts "types = pokemon_types"
+    puts "#{new_pokemon.id}. #{new_pokemon.name}"
+    puts "height = #{new_pokemon.height} inches"
+    puts "weight = #{new_pokemon.weight} lbs"
     run
   end
   
