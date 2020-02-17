@@ -39,13 +39,13 @@ class CLI
   
   def about_pokemon
     new_pokemon = Pokemon.all.last
-    puts "#{new_pokemon.id}. #{new_pokemon.name}" unless new_pokemon.id == nil
+    puts "ID = #{new_pokemon.id}. Name = #{new_pokemon.name}" unless new_pokemon.id == nil
     if new_pokemon.id == nil
       puts "That name did not match an existing Pokemon"
       select_pokemon
     end
-    puts "height = #{new_pokemon.height} inches" unless new_pokemon.height == nil
-    puts "weight = #{new_pokemon.weight} lbs" unless new_pokemon.weight == nil
+    puts "Height = #{new_pokemon.height} inches" unless new_pokemon.height == nil
+    puts "Weight = #{new_pokemon.weight} lbs" unless new_pokemon.weight == nil
     run unless new_pokemon.id == nil
   end
   
