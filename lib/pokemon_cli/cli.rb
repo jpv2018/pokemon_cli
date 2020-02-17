@@ -44,8 +44,8 @@ class CLI
       puts "That name did not match an existing Pokemon"
       select_pokemon
     end
-    puts "Height = #{new_pokemon.height} inches" unless new_pokemon.height == nil
-    puts "Weight = #{new_pokemon.weight} lbs" unless new_pokemon.weight == nil
+    puts "Height = #{new_pokemon.height * 10} centimeters" unless new_pokemon.height == nil
+    puts "Weight = #{new_pokemon.weight / 10} lbs" unless new_pokemon.weight == nil
     run unless new_pokemon.id == nil
   end
   
